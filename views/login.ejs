@@ -1,0 +1,117 @@
+
+<%-include('partials/header.ejs');%>
+<body>
+    
+    <%-include('partials/navbar.ejs');%>
+
+
+            <div class="container login"  id="formularioLogin">
+ 
+                
+       <!-- Formulario 1 -->
+                <% if(cadastrar==0) {%>
+                <div class="card">
+                <div class="card-header bk">
+                    <h3 class="float-left" >Bem vindo ao nosso sistema</h3>
+
+                    <div class="clearfix"></div>
+                </div>
+
+                    <div class="card-body">
+                        <form method="POST" action="/login">
+                        <label>
+                            <h6>Digite seu email para entrar</h6>
+                        </label>
+                        <input type="email" placeholder="e-mail" class="form-control" name="email">
+                        <label>
+                            <h6>Digite sua senha</h6>
+                        </label>
+                        <input type="password" placeholder="Senha" class="form-control" name="senha">
+                        <br>
+                        <button type="submit" class="btn btn-info">Logar</button>
+                        <!-- <a href="/formcadastro"  class="btn btn-info ">Clique para cadastrar</a> -->
+                    </form>
+                      
+                    </div>
+                  
+                </div>
+                <% } %>
+            </div>
+
+
+           
+            <!-- Formulario 2 -->
+          
+            <div class="container login" id="formularioCadastro" >
+
+                <% if(cadastrar==1){ %>
+                <div class="card ">
+
+                    <div class="card-header bk ">
+                        <h3 class="float-left">Cadastre-se</h3>
+    
+                        <div class="clearfix"></div>
+                    </div>
+                 
+                    <div class="card-body">
+                        <form method="POST" action="/cadastrar">
+                            <label>
+                                <h6>Digite seu nome e sobrenome </h6>
+                            </label>
+                            <input type="text" placeholder="seu nome" class="form-control" name="nome">
+                        <label>
+                            <h6>Digite seu email </h6>
+                        </label>
+                        <input type="email" placeholder="e-mail" class="form-control" name="email">
+                        <label>
+                            <h6>Digite seu setor de trabalho </h6>
+                        </label>
+                        <input type="text" placeholder="setor" class="form-control" name="setor">
+                        <label>
+                            <h6>RFID </h6>
+                        </label>
+                        <input type="text" placeholder="RFID" class="form-control" name="RFID">
+                        <label>
+                            <h6>perfil </h6>
+                        </label>
+                        <input type="text" placeholder="perfil" class="form-control" name="perfil">
+                        <label>
+                            <h6>Digite sua senha</h6>
+                        </label>
+                        <input type="password" placeholder="Senha" class="form-control" name="senha">
+                        <label>
+                            <h6>Confirme sua senha</h6>
+                        </label>
+                        <input type="password" placeholder="Confirme sua senha" class="form-control" name="confirmar">
+                        <br>
+                        <button type="submit" class="btn btn-info">Cadastrar</button>
+                        <a href="/" class="btn btn-info">Faça o login</a>
+
+                        <% if(feedback!="0"){ %>
+                            
+                            <h4>Erro: <%=feedback %></h4>
+                  
+     
+                     <% } %>
+                    </form>
+                      
+                    </div>
+               
+                </div>
+
+            </div>
+                 
+            <% } %>
+
+     
+           
+
+         
+
+
+
+
+    </body>
+
+    <%-include('partials/footer.ejs');%>
+

@@ -1,0 +1,79 @@
+
+<%-include('partials/header.ejs');%>
+<body>
+    
+    <%-include('partials/navbar.ejs');%>
+
+            <br>
+
+            <div class="container">
+                <div class="card ">
+                    <div class="card-body  ">
+                        
+                        <h4>
+                            Título: <%=pergunta.titulo%>
+                        </h4>
+                        <hr>
+                        <p>
+                            Descrição:
+                            <%=pergunta.descricao%>
+                        </p>
+                   
+
+                        <form method="POST" action="/salvarresposta">
+                            <br>
+                            <label>Comentário</label>
+                            <br>
+                            <textarea placeholder="Descreva sua resposta" class="form-control" name="corpo"></textarea>
+                            <input type="hidden" name="perguntaid" value="<%= pergunta.id %>">
+
+                            <br>
+                            <button class="btn btn-info">Responder</button>
+                            <a href="/index"class="btn btn-primary-dark">Voltar</a>
+                        </form>
+                    </div>
+                </div>
+          <br>
+
+                <div class="card  ">
+                    <div class="card-body ">
+                        <h4 >Respostas</h4>
+                   
+                        <% respostas.forEach(resposta=> { %>
+
+                              
+                            <div class="card ">
+                                <div class="card-body">
+                                    
+                                    <p>
+                                        <%= resposta.corpo %>
+                                    </p>
+                                </div>
+
+                            </div>
+                            <% if(resposta.email==userlogado){%>
+                                <br>
+                                <a href="/deletarResposta/<%= resposta.id %>" class="btn btn-danger">Apagar</a>
+                                <br>
+                                
+                                <%} %>
+                                <br>
+                                <% })%>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+
+
+
+
+
+    </body>
+
+    <%-include('partials/footer.ejs');%>

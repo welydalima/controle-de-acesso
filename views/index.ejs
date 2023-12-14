@@ -1,0 +1,94 @@
+
+<%-include('partials/header.ejs');%>
+<body>
+    
+    <%-include('partials/navbar.ejs');%>
+   
+    <h6 class="user">Olá, seja bem vindo(a) <%=userlogado%> </h6>
+    
+<div class="container">
+
+    <% if(cadvisit==0) {%>
+  <!-- Formulario 1 -->
+
+    <div class="card">
+    <div class="card-header bk">
+        <h5 class="float-left" >Bem vindo a empresa</h5>
+
+        <div class="clearfix"></div>
+    </div>
+
+        <div class="card-body">
+            <form method="POST" action="/procurar">
+            <label>
+                <h6>Nome do Visitante</h6>
+            </label>
+            <input type="text" placeholder="Nome completo" class="form-control" name="visit">
+            <label>
+                <h6>CPF</h6>
+            </label>
+            <input type="id" placeholder="CPF" class="form-control" name="cpf">
+            <br>
+            <button type="submit" class="btn btn-info">Procurar</button>
+            <a href="/formcadv"  class="btn btn-info ">Clique para cadastrar</a>
+        </form>
+          
+        </div>
+      
+    </div>
+      <% } %>
+</div>
+
+    <div class="container login" id="formularioCadastro" >
+
+        <% if(cadvisit==1) {%>
+        <div class="card ">
+
+            <div class="card-header bk ">
+                <h5 class="float-left">Cadastro do Visitante</h5>
+
+                <div class="clearfix"></div>
+            </div>
+         
+            <div class="card-body">
+                <form method="POST" action="/cadastrarvisit">
+                    <label>
+                        <h6>Digite nome e sobrenome</h6>
+                    </label>
+                    <input type="text" placeholder="seu nome" class="form-control" name="nome">
+                <label>
+                      <h6>CPF</h6>
+                </label>
+                <input type="text" placeholder="cpf" class="form-control" name="cpf">
+                <label>
+                    <h6>endereço</h6>
+                </label>
+                <input type="text" placeholder="endereço" class="form-control" name="endereco">
+                <!-- <label>
+                    <h6>Data</h6>
+                </label>
+                <input type="password" placeholder="Confirme sua senha" class="form-control" name="confirmar"> -->
+                <br>
+                <button type="submit" class="btn btn-info">Cadastrar</button>
+                <!-- <a href="/index" class="btn btn-info">Faça o login</a> -->
+
+             
+            </form>
+              
+            </div>
+       
+        </div>
+        
+    </div>
+    <% } %>
+         
+ 
+
+
+
+</body>
+
+
+
+
+<%-include('partials/footer.ejs');%>

@@ -1,0 +1,73 @@
+body{
+    background-color: #f1f1f1;
+}
+.logo{
+
+    width: auto;
+    height: 60px;
+    margin-left: 15px;
+   
+}
+h3{
+    margin-left: 2%;
+}
+#formulario-pergunta{
+    margin-top: 5vh;
+}
+/* copy m css */
+.page-title {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.ask-button {
+    float: right;
+}
+
+.btn-space {
+    margin-top: 10px;
+    margin-bottom: 1px;
+}
+
+.btn-question {
+    margin-left: 80%;
+    margin-bottom: 1px;
+}
+/* CSS para sombreado */
+.custom-shadow {
+    text-shadow: 2px 2px 9px rgba(0, 0, 0, 0.5);
+  }
+  .container{
+  /* padding-top: 3%; */
+  width: 55%; 
+  }
+  .login{
+    margin-top: 2%;
+    width: 50%; 
+  }
+/* #sair{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin-left: 23%;
+  margin-top: 1%;
+  width: 5%;
+
+
+} */
+.user{
+
+    display: flex;
+    margin-left: 2%;
+    
+}.bk{
+  background-color: rgb(30, 191, 236);
+}
+.btema{
+ display: flex;
+margin-left: 2%;
+margin-bottom: 2%;
+
+}
+

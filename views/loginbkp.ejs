@@ -1,0 +1,64 @@
+<%- include partials/header.ejs %>
+
+<body >
+    <%-include('partials/header.ejs');%>
+
+    <br>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <!-- O estilo "min-height: 100vh;" faz com que o contêiner ocupe pelo menos 100% da altura da tela -->
+        <div class="card">
+            <div class="card-header">
+                <h3>Bem vindo ao fórum de dúvidas compartilhadas</h3>
+            </div>
+
+            <% if(cadastrar==0) {%>
+            <div class="card-body">
+                <form method="post" action="/login">
+                    <label class="my-2 ">
+                        <h4>Digite seu email para entrar</h4>
+                    </label>
+
+                    <input type="email" placeholder="e-mail" class="form-control my-2 " name="usuario">
+                    <label>
+                        <h4>Digite sua senha</h4>
+                    </label>
+                    <input type="password" placeholder="Senha" class="form-control" name="senha">
+                    <br>
+                    <button class="btn btn-primary ">Logar</button>
+                    <a href="/formcadastro" class=" btn btn-primary">Clique para cadastrar</a>
+                </form>
+            </div>
+            <% } %>
+
+            <% if(cadastrar==1){ %>
+            <div class="card-header">
+                <div class="card-body">
+                    <form method="post" action="/cadastrar">
+                        <label>
+                            <h4>Digite seu email para entrar</h4>
+                        </label>
+                        <input type="email" placeholder="e-mail" class="form-control" name="usuario">
+                        <label>
+                            <h4>Digite sua senha</h4>
+                        </label>
+                        <input type="password" placeholder="Senha" class="form-control" name="senha">
+                        <label>
+                            <h4>Confirme sua senha</h4>
+                        </label>
+                        <input type="password" placeholder="Senha" class="form-control" name="confirma">
+                        <br>
+                        <button class="btn btn-primary ">Cadastrar</button>
+                        <% if(feedback!="0" ){ %>
+                        <h4>Erro: <%=feedback %></h4>
+                        <% } %>
+                    </form>
+                </div>
+            </div>
+
+            <% } %>
+        </div>
+    </div>
+
+</body>
+
+<%-include('partials/footer.ejs');%>
